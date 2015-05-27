@@ -88,7 +88,7 @@ try:
 				for n, (name, url, ext) in enumerate(streams, 1):
 					print '% 2d' % n, name
 			else:
-				print "i, ii, del, s H:M"
+				print "i, ii, rm/del, s H:M"
 			
 			cmd = raw_input(">")
 			if (not started) and cmd.isdigit() and (1 <= int(cmd) <= len(streams)):
@@ -102,7 +102,7 @@ try:
 				with open('%s/stream_%s_%s_%s' % (dump_dirpath, start_time_s, sname, mark), 'wb') as _:
 					pass
 				print 'ok'
-			elif started and cmd == 'del':
+			elif started and cmd in ('rm', 'del'):
 				sname = cur_stream[0]
 
 				must_stop_mplayer[0] = True
