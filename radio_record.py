@@ -1,4 +1,6 @@
 import traceback
+quiet_exit = False
+class QuietExit (Exception): pass
 try:
 
 
@@ -7,6 +9,7 @@ try:
 	import datetime
 	import glob
 	import os
+	import sys
 	import signal
 	import ctypes
 	import time
@@ -123,6 +126,8 @@ try:
 					os.remove(fpath)
 					c += 1
 				print 'ok', c, 'deleted'
+
+				raise QuietExit()
 			elif started and cmd.startswith('s '):
 				expr = cmd[len('s '):]
 				try:
@@ -158,7 +163,10 @@ except KeyboardInterrupt:
 	print "@@@ KeyboardInterrupt"
 
 #a kludge for windows console
+except QuietExit:
+	quiet_exit = True
 except:
 	traceback.print_exc()
 finally:
-	raw_input("@@@ finished")
+	if not quiet_exit:
+		raw_input("@@@ finished")
