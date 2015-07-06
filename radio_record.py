@@ -24,6 +24,7 @@ try:
 		('motttfm',     'http://stream.mottt.fm:9092/', 'mp3'),
 		('mhyh',        'http://50.7.98.106:8830/stream', 'mp3'),
 		('hoxtonfm',    'http://95.142.158.105:8024/stream', 'mp3'),
+		('psychoradio', 'http://stream.psychoradio.org:8000/', 'mp3'),
 	]
 	mplayer_fpath = 'C:/apps/mplayer/mplayer.exe' 
 	dump_dirpath = 'c:/radio_stream_dumps'
