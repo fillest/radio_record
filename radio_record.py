@@ -153,7 +153,7 @@ try:
 				thr.daemon = True
 				thr.start()
 				
-				print "ok, will stop after %ss" % delay
+				print "ok, will stop after %sm" % (delay / 60)
 			else:
 				print "invalid usage"
 			#TODO + edit info?; retry recording on stop (-loop 0 not working?);
