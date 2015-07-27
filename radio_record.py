@@ -92,7 +92,7 @@ try:
 				for n, (name, url, ext) in enumerate(streams, 1):
 					print '% 2d' % n, name
 			else:
-				print "i, ii, rm/del, s H:M"
+				print "i, ii, rm/del, s H:M, q"
 			
 			cmd = raw_input(">")
 			if (not started) and cmd.isdigit() and (1 <= int(cmd) <= len(streams)):
@@ -128,6 +128,23 @@ try:
 					c += 1
 				print 'ok', c, 'deleted'
 
+				raise QuietExit()
+			elif started and cmd == 'q':
+				#TODO copypasted
+				must_stop_mplayer[0] = True
+				try:
+					time.sleep(9000)
+					print "@@@ this should not be printed"
+				except KeyboardInterrupt:
+					pass
+
+				while True:
+					if mplayer_exited[0]:
+						break
+					else:
+						time.sleep(0.2)
+
+				#TODO check that it exited with 0?
 				raise QuietExit()
 			elif started and cmd.startswith('s '):
 				expr = cmd[len('s '):]
