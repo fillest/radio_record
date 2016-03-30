@@ -17,14 +17,17 @@ try:
 
 
 	#TODO config
+	#TODO pin to numbers (numbers get strongly remembered)
 	streams = [
 		('jungletrain', 'http://stream2.jungletrain.net:8000/', 'mp3'),
-		('subfm',       'http://radio.sub.fm:8529/', 'mp3'),
+		('subfm',       'http://listen.sub.fm/hi', 'mp3'),
 		('dubstepfm',   'http://relay1.dubstep.fm/', 'aac'),
 		('motttfm',     'http://stream.mottt.fm:9092/', 'mp3'),
 		('mhyh',        'http://50.7.98.106:8830/stream', 'mp3'),
 		('hoxtonfm',    'http://95.142.158.105:8024/stream', 'mp3'),
 		('psychoradio', 'http://stream.psychoradio.org:8000/', 'mp3'),
+		('rinsefm',     'http://r3.dgen.net:8000/rinseradio', 'mp3'),
+		('kexp',        'http://live-aacplus-64.kexp.org/kexp64.aac', 'aac'),
 	]
 	mplayer_fpath = 'C:/apps/mplayer/mplayer.exe' 
 	dump_dirpath = 'c:/radio_stream_dumps'
@@ -172,6 +175,7 @@ try:
 				
 				print "ok, will stop after %sm" % (delay / 60)
 			else:
+				#TODO colorize
 				print "invalid usage"
 			#TODO + edit info?; retry recording on stop (-loop 0 not working?);
 	main()
