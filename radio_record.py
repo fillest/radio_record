@@ -1,6 +1,7 @@
 import traceback
 quiet_exit = False
-class QuietExit (Exception): pass
+class QuietExit (Exception):
+	pass
 try:
 
 
@@ -19,7 +20,7 @@ try:
 	#TODO config
 	#TODO pin to numbers (numbers get strongly remembered)
 	streams = [
-		('jungletrain', 'http://stream2.jungletrain.net:8000/', 'mp3'),
+		('jungletrain', 'http://stream6.jungletrain.net:8000/', 'mp3'),
 		('subfm',       'http://listen.sub.fm/hi', 'mp3'),
 		('dubstepfm',   'http://relay1.dubstep.fm/', 'aac'),
 		('motttfm',     'http://stream.mottt.fm:9092/', 'mp3'),
